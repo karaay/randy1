@@ -4,7 +4,7 @@ const fs = require('fs')
 const moment = require('moment')
 const data = require('data')
 const ms = require('ms')
-
+const prefix = '-';
 client.on('ready', () => {
    console.log(`----------------`);
       console.log(`Desert Bot- Script By : Randy`);
@@ -12,13 +12,13 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : Randy ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`-help `,"http://twitch.tv/S-F")
+client.user.setGame(`Pànorama Server.. `,"http://twitch.tv/S-F")
 client.user.setStatus("dnd")
 });
 
 client.on('message', function(msg) {
-    const prefix = '-'
-    if(msg.content.startsWith (prefix  + 'server')) {
+    
+    if(msg.content.startsWith (prefix  +'سيرفر','server')) {
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setThumbnail(msg.guild.iconURL)
@@ -54,7 +54,7 @@ client.on('message', message => {
 -unmute --> فك من شخص ميوت
 -bc --> لنشر رساله للأعضاء
 **
-==================================================================
+
 
 `);
 
@@ -66,7 +66,7 @@ client.on('message', message => {
      
      let command = message.content.split(" ")[0];
      
-     if (command === "-mute") {
+     if (command === "اسكت","mute") {
            if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
      let user = message.mentions.users.first();
      let modlog = client.channels.find('name', 'mute-log');
@@ -100,7 +100,7 @@ client.on('message', message => {
      
      let command = message.content.split(" ")[0];
      
-     if (command === "-unmute") {
+     if (command === "تكلم","unmute") {
            if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
      let user = message.mentions.users.first();
      let modlog = client.channels.find('name', 'mute-log');
@@ -128,7 +128,7 @@ client.on('message', message => {
    
    });
    
-     var prefix = "-"
+     
    client.on('message', message => {
      if (message.author.x5bz) return;
      if (!message.content.startsWith(prefix)) return;
@@ -138,7 +138,7 @@ client.on('message', message => {
    
      let args = message.content.split(" ").slice(1);
    
-     if (command == "kick") {
+     if (command == "كيك,'kick") {
                   if(!message.channel.guild) return message.reply('** This command only for servers**');
             
      if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("**You Don't Have ` KICK_MEMBERS ` Permission**");
@@ -169,14 +169,13 @@ client.on('message', message => {
    });
    
      client.on('message', async message => {
-    var moment = require('moment');
-    var mmss = require('ms')
+  
     let date = moment().format('Do MMMM YYYY , hh:mm');
     let User = message.mentions.users.first();
     let Reason = message.content.split(" ").slice(3).join(" ");
     let messageArray = message.content.split(" ");
     let time = messageArray[2];
-    if(message.content.startsWith(prefix + "-ban")) {
+    if(message.content.startsWith(prefix + "باند'،ban")) {
       if (!message.channel.guild) return;
        if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.channel.send("**ماعندك برمشن :X:**");
        if(!User) message.channel.send("Mention Someone");
@@ -207,10 +206,10 @@ client.on('message', message => {
   });
   
 client.on("message", message => {
-    var prefix = "-";
+    
  
             var args = message.content.substring(prefix.length).split(" ");
-            if (message.content.startsWith(prefix + "bc")) {
+            if (message.content.startsWith(prefix + "obc")) {
                          if (!message.member.hasPermission("CONNECT"))  return;
                             let embed4 = new Discord.RichEmbed()
              .setDescription("**:white_check_mark: | جاري ارسال البرودكاست**")
@@ -225,7 +224,7 @@ client.on("message", message => {
 });
 
 	 client.on("message", message => {
-    var prefix = "-";
+    
  
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
@@ -235,11 +234,11 @@ client.on("message", message => {
       
       message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
       message.channel.sendMessage("", {embed: {
-        title: "Done | تم مسح الشات",
+       
         color: 0x06DF00,
-        description: "تم المسح„ ",
-        footer: {
-          text: "راندى"
+        description: "تم مسح الروم بنجآح„ ",
+       
+
         }
       }}).then(msg => {msg.delete(3000)});
                           }
